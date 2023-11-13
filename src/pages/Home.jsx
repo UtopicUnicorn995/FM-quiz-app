@@ -2,14 +2,13 @@ import '../css/home.css'
 import { useEffect, useState } from 'react'
 import datas from '../data.json'
 import Choies from '../components/Choices'
+import ThemeButton from '../components/ThemeButton'
 
 export default function Home(){
     return (
         <div className="home light">
             <div className="button-theme__container">
-                <button>
-                    <div></div>
-                </button>
+                <ThemeButton/>
             </div>
             <div className="content">
                 <header className="header">
