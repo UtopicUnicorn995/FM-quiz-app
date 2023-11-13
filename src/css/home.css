@@ -1,0 +1,57 @@
+
+.home{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home.light{
+    background-color: var(--light-grey);
+    background-image: url(../assets/images/pattern-background-desktop-light.svg);
+}
+
+.home ul{
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+}
+
+.home .content{
+    padding: 0 140px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.home .header{
+    max-width: 465px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 48px;
+}
+
+.home .header h1{
+    font-size: 64px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    font-weight: 300;
+    color: var(--dark-navy);
+}
+
+.home .header h1 span{
+    font-weight: 500;
+}
+
+.home .header p{
+    font-style: italic;
+    font-weight: 400;
+    color: var(--grey);
+}
+
+.home .subjects{
+    max-width: 565px;
+    width: 100%;
+}
