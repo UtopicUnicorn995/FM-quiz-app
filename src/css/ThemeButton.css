@@ -1,0 +1,41 @@
+
+.button-theme__container div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 16px;
+}
+
+.button-theme__container button{
+    height: 28px;
+    width: 48px;
+    background-color: var(--light-purple);
+    border: none;
+    border-radius: 100px;
+    position: relative;
+    display: flex;
+    padding: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.button-theme__container .light button span{
+    position: absolute;
+    left: 4px;
+    transition: left 1s linear;
+}
+
+.button-theme__container .dark button span{
+    position: absolute;
+    right: 4px;
+    transition: right 1s linear;
+}
+
+
+.button-theme__container button span{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--white);
+}

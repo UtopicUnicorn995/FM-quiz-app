@@ -1,5 +1,5 @@
 import { useState } from "react"
-import '../css/choices.css'
+import '../css/Choices.css'
 
 export default function Choies({title, img}){
 
