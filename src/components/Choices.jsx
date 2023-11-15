@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 import "../css/Choices.css";
 
 export default function Choies({ title, img, quiz }) {
@@ -24,7 +24,8 @@ export default function Choies({ title, img, quiz }) {
 
   return (
     <li>
-      <button onClick={() => quiz(title)}>
+        <Link to='/quiz'>
+        <button onClick={() => quiz(title)} >
         <img
           src={`src/${img}`}
           alt={title}
@@ -32,6 +33,7 @@ export default function Choies({ title, img, quiz }) {
         />
         {title}
       </button>
+      </Link>
     </li>
   );
 }
