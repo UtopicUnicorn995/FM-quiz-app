@@ -1,5 +1,7 @@
 
-li{
+li button{
+    width: 100%;
+    border: none;
     padding: 20px;
     display: flex;
     align-items: center;
@@ -9,32 +11,32 @@ li{
     font-weight: 500;
 }
 
-.light li{
+.light li button{
     background-color: var(--white);
     box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
     color: var(--dark-navy);
 }
 
-.dark li{
+.dark li button{
     background-color: var(--grey-navy);
     box-shadow: 0px 16px 40px 0px rgba(49, 62, 81, 0.14);
     color: var(--white);
 }
 
-li:hover{
+li button:hover{
     cursor: pointer;
     transition: box-shadow 0.5s linear;
 }
 
-.light li:hover{
+.light li button:hover{
     box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.24);
 }
 
-.dark li:hover{
+.dark li button:hover{
     box-shadow: 0px 16px 40px 0px rgba(58, 72, 94, 0.24);
 }
 
-li img{
+li button img{
     padding: 8px;
     border-radius: 12px;
 }

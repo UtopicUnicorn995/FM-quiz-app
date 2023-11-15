@@ -6,8 +6,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-end;
-    row-gap: 99px;
-    padding: 99px 140px;
+    row-gap: 85px;
+    padding: 85px 140px;
 }
 
 .home.light{

@@ -9,7 +9,7 @@ export default function ThemeButton(props){
     const isLightMode = props.className === 'light';
 
     return (
-        <div key={props.className} className={props.className}>
+        <div key={props.className} className={`${props.className} button-container`}>
         <img src={isLightMode ? lightSunImg : darkSunImg} alt="Sun Image" />
         <button onClick={props.mode}><span></span></button>
         <img src={isLightMode ? lightMoonImg : darkMoonImg} alt="Moon Image" />
