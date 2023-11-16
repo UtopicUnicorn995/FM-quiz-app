@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import "../css/Choices.css";
 
-export default function Choies({ title, img, quiz }) {
+export default function Choies( props ) {
 
   const iconBgColor = function () {
-    switch (title) {
+    switch (props.title) {
       case "HTML":
         return "#FFF1E9";
         break;
@@ -25,13 +25,13 @@ export default function Choies({ title, img, quiz }) {
   return (
     <li>
         <Link to='/quiz'>
-        <button onClick={() => quiz(title)} >
+        <button onClick={() => quiz(props.title)} >
         <img
-          src={`src/${img}`}
-          alt={title}
+          src={`src/${props.img}`}
+          alt={props.title}
           style={{ backgroundColor: iconBgColor() }}
         />
-        {title}
+        {props.title}
       </button>
       </Link>
     </li>

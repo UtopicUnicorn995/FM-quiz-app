@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "../css/Home.css";
 import "../css/Quiz.css";
 import datas from "../data.json";
@@ -6,6 +7,29 @@ import Choies from "../components/Choices";
 export default function Quiz({ quizType }) {
   console.log("this page also rerenders");
   console.log(quizType);
+  const [questionNumber, setQuestionNumber] = useState(1)
+
+  function selectQuizQuestions(){
+    switch (quizType) {
+        case "Accessibility":
+          return datas.quizzes[3].questions;
+          break;
+        case "CSS":
+          return datas.quizzes[1].questions;
+          break;
+        case "Javascript":
+          return datas.quizzes[2].questions;
+          break;
+        case "HTML":
+          return datas.quizzes[0].questions;
+          break;
+        default:
+          return "";
+      }
+  }
+
+  console.log(selectQuizQuestions()[1].question)
+  
 
   return (
     <>
@@ -14,8 +38,7 @@ export default function Quiz({ quizType }) {
           <div className="question-content">
             <p className="question-number">Questions ? of 10</p>
             <p className="question-text">
-              Which of these color contrast ratios defines the minimum WCAG 2.1
-              Level AA requirement for normal text?
+              {selectQuizQuestions()[questionNumber].question}
             </p>
           </div>
           <div className="timer-container">
@@ -23,12 +46,13 @@ export default function Quiz({ quizType }) {
           </div>
         </div>
         <ul className="subjects">
-          {datas.quizzes.map((data, key) => (
+          {selectQuizQuestions()[questionNumber].options.map((data, key) => (
             <Choies
               className="subjects"
               key={key}
-              img={data.icon}
-              title={data.title}
+              quiz={quizType}
+              number={questionNumber}
+              title={data}
             />
           ))}
         </ul>
