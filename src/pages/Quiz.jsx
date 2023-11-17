@@ -9,6 +9,7 @@ export default function Quiz({ quizType }) {
   console.log(quizType);
   const [questionNumber, setQuestionNumber] = useState(1)
 
+
   function selectQuizQuestions(){
     switch (quizType) {
         case "Accessibility":
@@ -28,7 +29,6 @@ export default function Quiz({ quizType }) {
       }
   }
 
-  console.log(selectQuizQuestions()[1].question)
   
 
   return (

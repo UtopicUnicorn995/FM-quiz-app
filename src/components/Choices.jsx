@@ -3,6 +3,7 @@ import "../css/Choices.css";
 
 export default function Choies( props ) {
 
+
   const iconBgColor = function () {
     switch (props.title) {
       case "HTML":
@@ -22,18 +23,25 @@ export default function Choies( props ) {
     }
   };
 
+  let defaultChoice = (
+      <Link to='/quiz'>
+      <button  onClick={() => props.quiz(props.title)}>
+      <img
+        src={`src/${props.img}`}
+        alt={props.title}
+        style={{ backgroundColor: iconBgColor() }}
+      />
+      {props.title}
+    </button>
+    </Link>
+    )
+
+
+
+
   return (
     <li>
-        <Link to='/quiz'>
-        <button onClick={() => quiz(props.title)} >
-        <img
-          src={`src/${props.img}`}
-          alt={props.title}
-          style={{ backgroundColor: iconBgColor() }}
-        />
-        {props.title}
-      </button>
-      </Link>
+       {defaultChoice}
     </li>
   );
 }

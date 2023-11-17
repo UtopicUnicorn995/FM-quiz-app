@@ -12,7 +12,8 @@ import './css/Home.css'
 
 function App() {
   const [mode, setMode] = useState('light')
-  const [quizType, setQuizType] = useState(null);
+  const [quizType, setQuizType] = useState('HTML');
+  const [isHome, setIsHome] = useState(true)
 
   function handleModeChange(modeState){
     setMode(modeState)
