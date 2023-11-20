@@ -1,37 +1,102 @@
-.question-content__wrapper{
+.question-content__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 452px;
+}
+
+.question-content .question-text {
+  color: var(--dark-navy);
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.dark .question-content .question-text {
+  color: var(--white);
+}
+
+.question-content .question-number {
+  color: var(--grey-navy);
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.dark .question-content .question-number {
+  color: var(--pale-blue);
+}
+
+.question-content {
+  max-width: 465px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 27px;
+}
+
+.timer-container {
+  width: 100%;
+  background-color: var(--white);
+}
+
+.dark .timer-container {
+  width: 100%;
+  background-color: var(--grey-navy);
+}
+
+.timer-bar {
+  height: 8px;
+  background-color: var(--light-purple);
+  border-radius: 100px;
+  animation: timer 10000ms linear;
+}
+
+@keyframes timer {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+.content .submit-btn {
+  display: flex;
+  padding: 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+  border-radius: 24px;
+  background: var(--light-purple);
+  box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
+  color: var(--white);
+  font-size: 28px;
+  font-weight: 500;
+}
+
+
+.content .submit-btn:hover {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%), var(--Purple, #A729F5);
+}
+
+
+
+.error-message{
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8px;
+    color: var(--almost-red);
+    font-size: 24px;
+    animation: hideError 10000ms linear;
 }
 
-.question-content .question-text{
-    color: var(--dark-navy);
-    font-size: 36px;
-    font-weight: 500;
-    line-height: 1.2;
-}
-
-.question-content .question-number{
-    color: var(--grey-navy);
-    font-size: 20px;
-    font-weight: 400;
-    font-style: italic;
-}
-
-.question-content{
-    max-width: 465px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 27px;
-}
-
-.timer-container{
-    width: 100%;
-}
-
-.timer-bar{
-   height: 8px;
-   width: 40%;
-   background-color: var(--light-purple); 
-   border-radius: 100px;
+@keyframes hideError {
+    0%,99%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }

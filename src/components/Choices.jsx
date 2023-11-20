@@ -23,6 +23,7 @@ export default function Choies( props ) {
     }
   };
 
+
   let defaultChoice = (
       <Link to='/quiz'>
       <button  onClick={() => props.quiz(props.title)}>
@@ -36,8 +37,13 @@ export default function Choies( props ) {
     </Link>
     )
 
-
-
+    if(props.quizOn){
+      defaultChoice = (
+        <button  onClick={() => props.quiz(props.title)}>
+        <span>{String.fromCharCode('A'.charCodeAt(0) + props.index)}</span>{props.title}
+      </button>
+      )
+    }
 
   return (
     <li>

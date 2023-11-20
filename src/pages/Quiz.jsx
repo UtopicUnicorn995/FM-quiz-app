@@ -3,11 +3,23 @@ import "../css/Home.css";
 import "../css/Quiz.css";
 import datas from "../data.json";
 import Choies from "../components/Choices";
+import errorImg from '../assets/images/icon-error.svg'
 
 export default function Quiz({ quizType }) {
   console.log("this page also rerenders");
   console.log(quizType);
   const [questionNumber, setQuestionNumber] = useState(1)
+  const quizOn = true
+
+  function nextQuestion(){
+    if(questionNumber < 9){
+      setQuestionNumber(prevNumber => prevNumber + 1)
+    }
+    else{
+      setQuestionNumber(0)
+      console.log('Done with all of this shit')
+    }
+  }
 
 
   function selectQuizQuestions(){
@@ -36,7 +48,7 @@ export default function Quiz({ quizType }) {
       <div className="content ">
         <div className="question-content__wrapper">
           <div className="question-content">
-            <p className="question-number">Questions ? of 10</p>
+            <p className="question-number">Questions {questionNumber + 1} of 10</p>
             <p className="question-text">
               {selectQuizQuestions()[questionNumber].question}
             </p>
@@ -46,15 +58,19 @@ export default function Quiz({ quizType }) {
           </div>
         </div>
         <ul className="subjects">
-          {selectQuizQuestions()[questionNumber].options.map((data, key) => (
+          {selectQuizQuestions()[questionNumber].options.map((data, index) => (
             <Choies
+              quizOn={quizOn}
               className="subjects"
-              key={key}
+              key={index}
+              index={index}
               quiz={quizType}
               number={questionNumber}
               title={data}
             />
           ))}
+          <li><button className="submit-btn" onClick={nextQuestion}>Submit Answer</button></li>
+          <li className="error-message"><img src={errorImg} alt="" />Sorry. Timer ran out</li>
         </ul>
       </div>
     </>

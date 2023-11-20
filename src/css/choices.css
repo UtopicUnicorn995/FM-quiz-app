@@ -9,6 +9,7 @@ li button{
     border-radius: 24px;
     font-size: 28px;
     font-weight: 500;
+    text-align: start;
 }
 
 .light li button{
@@ -39,4 +40,15 @@ li button:hover{
 li button img{
     padding: 8px;
     border-radius: 12px;
+}
+
+li button span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-grey);
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    color: var(--grey-navy);
 }

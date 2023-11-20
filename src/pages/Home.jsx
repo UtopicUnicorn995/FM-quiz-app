@@ -5,6 +5,7 @@ import Choies from "../components/Choices";
 
 
 export default function Home({setQuizType}) {
+  const quizOn = false
 
   
   return (
@@ -19,6 +20,7 @@ export default function Home({setQuizType}) {
         <ul className="subjects">
           {datas.quizzes.map((data, key) => (
             <Choies
+              quizOn={quizOn}
               className="subjects"
               key={key}
               quiz={setQuizType}
