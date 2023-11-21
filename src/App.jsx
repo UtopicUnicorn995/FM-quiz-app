@@ -7,7 +7,7 @@ import cssImg from "./assets/images/icon-css.svg"
 import htmlImg from "./assets/images/icon-html.svg"
 import jsImg from "./assets/images/icon-js.svg"
 import accessabilityImg from "./assets/images/icon-accessibility.svg";
-
+import "./css/Home.css";
 
 
 function App() {

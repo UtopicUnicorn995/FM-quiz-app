@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../css/Home.css";
 import "../css/Quiz.css";
 import datas from "../data.json";
 import Choies from "../components/Choices";
