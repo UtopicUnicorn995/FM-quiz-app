@@ -1,12 +1,10 @@
 import { useState } from "react";
-import "../css/Home.css";
 import datas from "../data.json";
 import Choies from "../components/Choices";
 
 
 export default function Home({setQuizType}) {
   const quizOn = false
-
   
   return (
     <>

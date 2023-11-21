@@ -13,7 +13,6 @@ import accessabilityImg from "./assets/images/icon-accessibility.svg";
 function App() {
   const [mode, setMode] = useState('light')
   const [quizType, setQuizType] = useState('HTML');
-  const [isHome, setIsHome] = useState(true)
 
   function handleModeChange(modeState){
     setMode(modeState)
@@ -60,8 +59,8 @@ function App() {
         <ThemeButton className={mode} mode={changeMode} />
       </div>
       <Routes>
-        <Route exact path='/' element={<Home setQuizType={setQuizType} mode={mode}/>}/>
-        <Route exact path='/quiz' element={ <Quiz  quizType={quizType}/>}/>
+        <Route exact path='/' element={<Home setQuizType={setQuizType} mode={mode} />}/>
+        <Route exact path='/quiz' element={ <Quiz  quizType={quizType} />}/>
        
       </Routes>
       </div>

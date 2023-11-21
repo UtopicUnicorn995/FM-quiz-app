@@ -6,10 +6,9 @@ import Choies from "../components/Choices";
 import errorImg from '../assets/images/icon-error.svg'
 
 export default function Quiz({ quizType }) {
-  console.log("this page also rerenders");
-  console.log(quizType);
   const [questionNumber, setQuestionNumber] = useState(1)
   const quizOn = true
+  
 
   function nextQuestion(){
     if(questionNumber < 9){
