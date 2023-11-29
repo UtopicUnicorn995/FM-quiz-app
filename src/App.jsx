@@ -60,7 +60,7 @@ function App() {
       </div>
       <Routes>
         <Route exact path='/' element={<Home setQuizType={setQuizType} mode={mode} />}/>
-        <Route exact path='/quiz' element={ <Quiz  quizType={quizType} />}/>
+        <Route exact path='/quiz' element={ <Quiz  quizType={quizType} setQuizType={setQuizType} />}/>
        
       </Routes>
       </div>

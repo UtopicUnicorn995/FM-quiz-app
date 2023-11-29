@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../css/Quiz.css";
 import datas from "../data.json";
 import Choies from "../components/Choices";
@@ -6,8 +6,8 @@ import errorImg from '../assets/images/icon-error.svg'
 
 export default function Quiz({ quizType }) {
   const [questionNumber, setQuestionNumber] = useState(1)
+  const [userScore, setUserScore] = useState(0)
   const quizOn = true
-  
 
   function nextQuestion(){
     if(questionNumber < 9){
@@ -19,6 +19,7 @@ export default function Quiz({ quizType }) {
     }
   }
 
+  console.log(userScore)
 
   function selectQuizQuestions(){
     switch (quizType) {
@@ -65,6 +66,8 @@ export default function Quiz({ quizType }) {
               quiz={quizType}
               number={questionNumber}
               title={data}
+              setUserScore={setUserScore}
+              quizAnswer={selectQuizQuestions()[questionNumber].answer}
             />
           ))}
           <li><button className="submit-btn" onClick={nextQuestion}>Submit Answer</button></li>

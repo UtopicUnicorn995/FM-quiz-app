@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
 import "../css/Choices.css";
+import { useState } from "react";
 
 export default function Choies( props ) {
+
+
+  function checkAnswer(){
+    if(props.quizAnswer === props.title){
+      props.setUserScore(prev => prev + 1)
+    }
+    console.log(this)
+  }
 
 
   const iconBgColor = function () {
@@ -23,6 +32,8 @@ export default function Choies( props ) {
     }
   };
 
+  console.log(props)
+
 
   let defaultChoice = (
       <Link to='/quiz'>
@@ -39,7 +50,7 @@ export default function Choies( props ) {
 
     if(props.quizOn){
       defaultChoice = (
-        <button  onClick={() => props.quiz(props.title)}>
+        <button onClick={checkAnswer}>
         <span>{String.fromCharCode('A'.charCodeAt(0) + props.index)}</span>{props.title}
       </button>
       )
